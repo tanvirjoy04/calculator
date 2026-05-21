@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "digital-7";
+  src: url("./font/digital-7.ttf");
+}
+
+header{
+  height:1.1in;
+  width:3.8in;
+  border:1px solid;
+  background-color: yellow;
+  font-size: 18mm;
+  font-family: "digital-7", Verdana, Geneva, Tahoma, sans-serif;
+  text-align:end;
+  margin-bottom: 20px;
+}
+
+main{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width:3.81in;
+  
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  padding:15px;
+  border-radius: 10px;
+}
+body{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  font-size: 18mm;
+  flex: 1;
+  border-radius: 10px;
+}
+
+.rowOne,
+.rowTwo,
+.rowThree,
+.rowFour{
+  display: flex;
+  gap:10px;
+  padding-top: 10px;
+}
+.op{
+  background-color: white;
+  border: 1px solid;
+}
