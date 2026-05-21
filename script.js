@@ -22,4 +22,10 @@ let num1,
     num2,
     op;
 
-
+//create new func
+function operate(op,num1,num2){
+    if(op=="+") add(num1,num2);
+    if(op=="-") sub(num1,num2);
+    if(op=="*") mul(num1,num2);
+    if(op=="/") div(num1,num2);    
+}
