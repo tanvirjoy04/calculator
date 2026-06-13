@@ -1,6 +1,7 @@
 @font-face {
   font-family: "digital-7";
-  src: url("./font/digital-7.ttf");
+  font-display: swap;
+  src: url("./fonts/digital-7.woff2") format("woff2");
 }
 
 header{
@@ -40,15 +41,27 @@ button{
   border-radius: 10px;
 }
 
-.rowOne,
-.rowTwo,
-.rowThree,
-.rowFour{
+.main-div-rowOne,
+.main-div-rowTwo,
+.main-div-rowThree,
+.main-div-rowFour{
   display: flex;
   gap:10px;
   padding-top: 10px;
 }
-.op{
+.div-button-op, 
+.div-button-clear,
+.div-button-equal{
   background-color: white;
-  border: 1px solid;
+  border: 1px solid black;
+}
+.div-button-clear{
+  color: white;
+  background-color:red;
+}
+.div-button-equal{
+  background-color:greenyellow;
+}
+header{
+  text-wrap: initial
 }

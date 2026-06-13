@@ -8,35 +8,36 @@
 </head>
 <body>
   <div class="container">
-    <header>1234536</header>
+    <header id="display">digital101</header>
     <main>
-      <div class="rowOne">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button class="op">%</button>
-        <button class="op">c</button>
+      <div class="main-div-rowOne">
+        <button onclick="displaySeven()">7</button>
+        <button onclick="displayEight()">8</button>
+        <button onclick="displayNine()">9</button>
+        <button onclick="displayPercentage()">%</button>
+        <button onclick="displayClear()" class="div-button-clear">c</button>
       </div>
-      <div class="rowTwo">
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button class="op">x</button>
-        <button class="op">÷</button>
+      <div class="main-div-rowTwo">
+        <button onclick="displayFour()">4</button>
+        <button onclick="displayFive()">5</button>
+        <button onclick="displaySix()">6</button>
+        <button onclick="assignMul()" class="div-button-op">x</button>
+        <button onclick="assignDiv()" class="div-button-op">÷</button>
       </div>
-      <div class="rowThree">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="op">+</button>
-        <button class="op">-</button>
+      <div class="main-div-rowThree">
+        <button onclick="displayOne()">1</button>
+        <button onclick="displayTwo()">2</button>
+        <button onclick="displayThree()">3</button>
+        <button onclick="assignPlus()" class="div-button-op">+</button>
+        <button onclick="assignMinus()" class="div-button-op">-</button>
       </div>
-      <div class="rowFour">
-        <button>0</button>
-        <button class="op">.</button>
-        <button class="op">=</button>
+      <div class="main-div-rowFour">
+        <button onclick="displayZero()">0</button>
+        <button onclick="displayDot()">.</button>
+        <button onclick="operate()" class="div-button-equal">=</button>
       </div>
     </main>
   </div>
 </body>
+<script src="./script.js"></script>
 </html>
