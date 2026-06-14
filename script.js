@@ -166,18 +166,31 @@ function updateDisplay(){
     }else{
       display.textContent = num2;
     }
+
 }
 
 function assignPlus(){
+  if(op=="+" || op=="-" || op=="*" || op=="/"){
+    operate();
+  }
   op = "+";
 }
 function assignMinus(){
+  if(op=="+" || op=="-" || op=="*" || op=="/"){
+    operate();
+  }
   op = "-";
 }
 function assignMul(){
+  if(op=="+" || op=="-" || op=="*" || op=="/"){
+    operate();
+  }
   op = "*";
 }
 function assignDiv(){
+  if(op=="+" || op=="-" || op=="*" || op=="/"){
+    operate();
+  }
   op = "/";
 }
 
