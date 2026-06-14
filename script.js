@@ -160,13 +160,30 @@ function displayPercentage(){
     display.textContent = num2;
   }
 }
+function displayRoot(){
+  if(op == undefined){
+    num1 = Math.sqrt(+num1);
+    display.textContent = num1;
+  }else{
+    num2 = Math.sqrt(+num2);
+    display.textContent = num2;
+  }
+}
+function displayPie(){
+  if(op == undefined){
+    num1 = Math.PI.toFixed(10);
+    display.textContent = num1;
+  }else{
+    num2 = Math.PI.toFixed(10);
+    display.textContent = num2;
+  }
+}
 function updateDisplay(){
-    if(op == undefined){
-      display.textContent = num1;
-    }else{
-      display.textContent = num2;
-    }
-
+  if(op == undefined){
+    display.textContent = num1;
+  }else{
+    display.textContent = num2;
+  }
 }
 
 function assignPlus(){

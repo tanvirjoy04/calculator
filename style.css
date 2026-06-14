@@ -8,8 +8,8 @@ header{
   height:1.1in;
   width:3.8in;
   border:1px solid;
-  background-color: yellow;
-  font-size: 18mm;
+  background-color: white;
+  font-size: 12mm;
   font-family: "digital-7", Verdana, Geneva, Tahoma, sans-serif;
   text-align:end;
   margin-bottom: 20px;
@@ -29,6 +29,7 @@ main{
   border: 1px solid;
   padding:15px;
   border-radius: 10px;
+  background-color: #f0f0f0;
 }
 body{
   display: flex;
@@ -36,9 +37,12 @@ body{
 }
 
 button{
-  font-size: 18mm;
+  font-size: 12mm;
   flex: 1;
   border-radius: 10px;
+  padding:20px 10px;
+  background-color: #fafafa;
+  border: 1px solid rgb(204,204,204);
 }
 
 .main-div-rowOne,
@@ -49,19 +53,17 @@ button{
   gap:10px;
   padding-top: 10px;
 }
-.div-button-op, 
-.div-button-clear,
+.div-button-op,
 .div-button-equal{
+  background-color: #ffcc00;
+}
+.div-button-op:hover,
+.div-button-equal:hover{
   background-color: white;
   border: 1px solid black;
 }
+
 .div-button-clear{
   color: white;
   background-color:red;
-}
-.div-button-equal{
-  background-color:greenyellow;
-}
-header{
-  text-wrap: initial
 }
