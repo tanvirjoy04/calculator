@@ -29,6 +29,9 @@ function operate(){
   if(op=="*") num1 = mul(+num1,+num2);
   if(op=="/") num1 = div(+num1,+num2);
       
+  if( (num1.toString().length) > 11)
+    num1 = num1.toPrecision(11);
+
   op = undefined;
   num2 = undefined;
   updateDisplay();
@@ -154,29 +157,34 @@ function displayClear(){
 function displayPercentage(){
   if(op == undefined){
     num1 = +num1/100;
-    display.textContent = num1;
   }else{
     num2 = +num2/100;
-    display.textContent = num2;
   }
+  updateDisplay();
 }
 function displayRoot(){
   if(op == undefined){
     num1 = Math.sqrt(+num1);
-    display.textContent = num1;
   }else{
     num2 = Math.sqrt(+num2);
-    display.textContent = num2;
   }
+  updateDisplay();
 }
 function displayPie(){
   if(op == undefined){
     num1 = Math.PI.toFixed(10);
-    display.textContent = num1;
   }else{
     num2 = Math.PI.toFixed(10);
-    display.textContent = num2;
   }
+  updateDisplay();
+}
+function displayBackspace(){
+  if(op == undefined){
+    num1 = num1.toString().slice(0,- 1);
+  }else{
+    num2 = num2.toString().slice(0,- 1);
+  }
+  updateDisplay();
 }
 function updateDisplay(){
   if(op == undefined){
@@ -187,25 +195,25 @@ function updateDisplay(){
 }
 
 function assignPlus(){
-  if(op=="+" || op=="-" || op=="*" || op=="/"){
+  if(num2){
     operate();
   }
   op = "+";
 }
 function assignMinus(){
-  if(op=="+" || op=="-" || op=="*" || op=="/"){
+  if(num2){
     operate();
   }
   op = "-";
 }
 function assignMul(){
-  if(op=="+" || op=="-" || op=="*" || op=="/"){
+  if(num2){
     operate();
   }
   op = "*";
 }
 function assignDiv(){
-  if(op=="+" || op=="-" || op=="*" || op=="/"){
+  if(num2){
     operate();
   }
   op = "/";
