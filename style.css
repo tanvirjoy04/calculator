@@ -45,7 +45,13 @@ button{
   padding:20px 10px;
   background-color: #fafafa;
   border: 1px solid rgb(204,204,204);
+
+  transition: all 0.1s ease; 
 }
+button:active {
+  transform: translateY(6px); 
+}
+
 
 .main-div-rowOne,
 .main-div-rowTwo,
@@ -69,3 +75,4 @@ button{
   color: white;
   background-color:red;
 }
+

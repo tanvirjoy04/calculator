@@ -20,7 +20,8 @@ console.log(div(5,2));
 //create 3 variables
 let num1,
     num2,
-    op;
+    op,
+    result;
 
 //create new func
 function operate(){
@@ -29,15 +30,23 @@ function operate(){
   if(op=="*") num1 = mul(+num1,+num2);
   if(op=="/") num1 = div(+num1,+num2);
       
-  if( (num1.toString().length) > 11)
+  if( (num1.toString().length) > 11){
     num1 = num1.toPrecision(11);
+  }
 
+  result = num1;
   op = undefined;
   num2 = undefined;
   updateDisplay();
 }
 
 function displayZero(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 0;
       else num1 += "0";
@@ -45,9 +54,17 @@ function displayZero(){
       if(num2 == undefined) num2 = 0;
       else num2 += "0";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displayOne(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 1;
       else num1 += "1";
@@ -55,9 +72,17 @@ function displayOne(){
       if(num2 == undefined) num2 = 1;
       else num2 += "1";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displayTwo(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 2;
       else num1 += "2";
@@ -65,9 +90,17 @@ function displayTwo(){
       if(num2 == undefined) num2 = 2;
       else num2 += "2";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displayThree(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 3;
       else num1 += "3";
@@ -75,9 +108,17 @@ function displayThree(){
       if(num2 == undefined) num2 = 3;
       else num2 += "3";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displayFour(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 4;
       else num1 += "4";
@@ -85,9 +126,17 @@ function displayFour(){
       if(num2 == undefined) num2 = 4;
       else num2 += "4";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displayFive(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 5;
       else num1 += "5";
@@ -95,9 +144,17 @@ function displayFive(){
       if(num2 == undefined) num2 = 5;
       else num2 += "5";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displaySix(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 6;
       else num1 += "6";
@@ -105,9 +162,17 @@ function displaySix(){
       if(num2 == undefined) num2 = 6;
       else num2 += "6";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displaySeven(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 7;
       else num1 += "7";
@@ -115,9 +180,17 @@ function displaySeven(){
       if(num2 == undefined) num2 = 7;
       else num2 += "7";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displayEight(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined){
       if(num1 == undefined) num1 = 8;
       else num1 += "8";
@@ -125,9 +198,17 @@ function displayEight(){
       if(num2 == undefined) num2 = 8;
       else num2 += "8";
   }
+
+  result = undefined;
   updateDisplay();
 }
 function displayNine(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+  
   if(op == undefined) {
       if(num1 == undefined) num1 = 9;
       else num1 += "9";
@@ -136,9 +217,16 @@ function displayNine(){
       else num2 += "9";
   }
 
+  result = undefined;
   updateDisplay();
 }
 function displayDot(){
+  if(result != undefined && op == undefined){
+    num1 = undefined;
+  }else if(result != undefined && op != undefined){
+    num2 = undefined;
+  }
+
   if(op == undefined){
       if(num1 == undefined) num1 = "0.";
       else num1 += ".";
@@ -146,19 +234,21 @@ function displayDot(){
       if(num2 == undefined) num2 = "0.";
       else num2 += ".";
   }
+
+  result = undefined;
   updateDisplay();
 }
-function displayClear(){
-  num1 = undefined;
-  num2 = undefined;
-  op = undefined;
-  display.textContent = "";
-}
 function displayPercentage(){
+  if(num1 == undefined){
+    num1 = 0;
+  }
   if(op == undefined){
     num1 = +num1/100;
   }else{
     num2 = +num2/100;
+  }
+  if(result != undefined){
+    result = num1;
   }
   updateDisplay();
 }
@@ -186,35 +276,59 @@ function displayBackspace(){
   }
   updateDisplay();
 }
+function displayClear(){
+  num1 = undefined;
+  num2 = undefined;
+  op = undefined;
+  result = undefined;
+  display.textContent = "0";
+}
 function updateDisplay(){
   if(op == undefined){
     display.textContent = num1;
   }else{
     display.textContent = num2;
   }
+
+  if(result != undefined){
+    display.textContent = result;
+  }
+  
 }
 
 function assignPlus(){
-  if(num2){
+  if(num2 != undefined){
     operate();
+  }
+  if(num1 == undefined){
+    num1 = 0;
   }
   op = "+";
 }
 function assignMinus(){
-  if(num2){
+  if(num2 != undefined){
     operate();
+  }
+  if(num1 == undefined){
+    num1 = 0;
   }
   op = "-";
 }
 function assignMul(){
-  if(num2){
+  if(num2 != undefined){
     operate();
+  }
+  if(num1 == undefined){
+    num1 = 0;
   }
   op = "*";
 }
 function assignDiv(){
-  if(num2){
+  if(num2 != undefined){
     operate();
+  }
+  if(num1 == undefined){
+    num1 = 0;
   }
   op = "/";
 }
