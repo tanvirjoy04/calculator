@@ -11,11 +11,6 @@ function mul(a,b){
 function div(a,b){
   return a/b;
 }
-console.log(add(3,7));
-console.log(sub(5,3));
-console.log(mul(3,3));
-console.log(div(5,2));
-
 
 //create 3 variables
 let num1,
@@ -138,11 +133,11 @@ function displayFive(){
   }
   
   if(op == undefined){
-      if(num1 == undefined) num1 = 5;
-      else num1 += "5";
+    if(num1 == undefined) num1 = 5;
+    else num1 += "5";
   }else{
-      if(num2 == undefined) num2 = 5;
-      else num2 += "5";
+    if(num2 == undefined) num2 = 5;
+    else num2 += "5";
   }
 
   result = undefined;
@@ -271,8 +266,10 @@ function displayPie(){
 function displayBackspace(){
   if(op == undefined){
     num1 = num1.toString().slice(0,- 1);
+    if(num1 === "") display.textContent = "0";
   }else{
     num2 = num2.toString().slice(0,- 1);
+    if(num2 === "") display.textContent = "0";
   }
   updateDisplay();
 }
@@ -293,7 +290,10 @@ function updateDisplay(){
   if(result != undefined){
     display.textContent = result;
   }
-  
+
+  if(num1 == "" || num2 == ""){
+    display.textContent = "0";
+  }
 }
 
 function assignPlus(){
