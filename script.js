@@ -239,8 +239,12 @@ function displayPercentage(){
   }
   if(op == undefined){
     num1 = +num1/100;
+    if(num1.toString().length > 11) 
+      num1 = num1.toFixed(6);
   }else{
     num2 = +num2/100;
+    if(num2.toString().length > 11) 
+      num2 = num2.toFixed(6);
   }
   if(result != undefined){
     result = num1;
