@@ -223,20 +223,21 @@ function displayDot(){
   }
 
   if(op == undefined){
-      if(num1 == undefined) num1 = "0.";
-      else num1 += ".";
+    if(num1 == undefined) num1 = "0.";
+    else if(!num1.toString().includes(".")) num1 += ".";
   }else{
       if(num2 == undefined) num2 = "0.";
-      else num2 += ".";
+      else if(!num2.toString().includes(".")) num2 += ".";
   }
 
   result = undefined;
   updateDisplay();
 }
 function displayPercentage(){
-  if(num1 == undefined){
+   if(num1 == undefined){
     num1 = 0;
   }
+  
   if(op == undefined){
     num1 = +num1/100;
     if(num1.toString().length > 11) 
@@ -246,16 +247,22 @@ function displayPercentage(){
     if(num2.toString().length > 11) 
       num2 = num2.toFixed(6);
   }
-  if(result != undefined){
-    result = num1;
-  }
+  
   updateDisplay();
 }
 function displayRoot(){
+  if(num1 == undefined){
+    num1 = 0;
+  }
+
   if(op == undefined){
     num1 = Math.sqrt(+num1);
+    if(num1.toString().length > 11) 
+      num1 = num1.toFixed(10);
   }else{
     num2 = Math.sqrt(+num2);
+    if(num2.toString().length > 11) 
+      num2 = num2.toFixed(10);
   }
   updateDisplay();
 }
@@ -338,3 +345,29 @@ function assignDiv(){
 }
 
 const display = document.getElementById("display");
+
+window.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  switch(key){
+    case "0": displayZero(); break;
+    case "1": displayOne(); break;
+    case "2": displayTwo(); break;
+    case "3": displayThree(); break;
+    case "4": displayFour(); break;
+    case "5": displayFive(); break;
+    case "6": displaySix(); break;
+    case "7": displaySeven(); break;
+    case "8": displayEight(); break;
+    case "9": displayNine(); break;
+    case ".": displayDot(); break;
+    case "+": assignPlus(); break;
+    case "-": assignMinus(); break;
+    case "*": assignMul(); break;
+    case "/": assignDiv(); break;
+    case "=": case "Enter": operate(); break;
+    case "Backspace": displayBackspace(); break;
+    case "Escape": case "c": displayClear(); break;
+    default: break;
+  }
+});
